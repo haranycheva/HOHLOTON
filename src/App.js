@@ -27,13 +27,13 @@ const App = () => {
     setAiLikenessExplanation("");
 
     try {
-      const result = await axios.post("https://7363-178-133-184-9.ngrok-free.app/api/hohloton", { theme });
+      const result = await axios.post("https://5965-128-124-205-220.ngrok-free.app/api/hohloton", { theme });
       const data = result.data.data.outputs;
       setGeneratedText(data.text2);
       setIsLoadingText(false);
 
       setIsLoadingStats(true);
-      const stats = await axios.post("https://7363-178-133-184-9.ngrok-free.app/api/hohloton2", { text: data.text2 });
+      const stats = await axios.post("https://5965-128-124-205-220.ngrok-free.app/api/hohloton2", { text: data.text2 });
       const data2 = stats.data.data.outputs;
       setAiLikenessScore(data2.statistic.ai_likeness_score);
       setAiLikenessExplanation(data2.statistic.ai_likeness_explanation);
